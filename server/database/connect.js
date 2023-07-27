@@ -6,7 +6,6 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 export const connectToDB = () => {
   mongoose.connect(MONGODB_URI);
-
   //to check connection status
   mongoose.connection.on("connected", () => {
     console.log("Connected Successfull to the DB ✅");

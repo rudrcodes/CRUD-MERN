@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchAllUser = async () => {
       try {
-        const allUsers = await axios.get('http://localhost:8000');
+        const allUsers = await axios.get('https://mern-crud-i9nm.onrender.com/');
         setUsers(allUsers.data.allUsers.reverse())
       } catch (error) {
         alert(`Error is : ${error}`)
@@ -28,7 +28,7 @@ function App() {
   //Create User
   const createUser = async () => {
     try {
-      await axios.post('http://localhost:8000', { name: userName })
+      await axios.post('https://mern-crud-i9nm.onrender.com/', { name: userName })
       setUsername('');
 
     } catch (error) {
@@ -44,7 +44,7 @@ function App() {
 
   const deleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:8000/${userId}`);
+      await axios.delete(`https://mern-crud-i9nm.onrender.com//${userId}`);
     } catch (error) {
       alert(`Error : ${error}`)
     }
@@ -56,7 +56,7 @@ function App() {
 
     if (newName == "") return alert("Enter new name ");
     try {
-      await axios.put(`http://localhost:8000/${userId}`, { newName })
+      await axios.put(`https://mern-crud-i9nm.onrender.com//${userId}`, { newName })
     } catch (error) {
       alert(`Error : ${error}`)
     }

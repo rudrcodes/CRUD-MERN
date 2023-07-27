@@ -29,6 +29,7 @@ function App() {
   const createUser = async () => {
     try {
       await axios.post('https://mern-crud-i9nm.onrender.com/', { name: userName })
+      // await axios.post('https://mern-crud-i9nm.onrender.com/', { name: userName })
       setUsername('');
 
     } catch (error) {

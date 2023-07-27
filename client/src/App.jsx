@@ -44,7 +44,7 @@ function App() {
 
   const deleteUser = async (userId) => {
     try {
-      await axios.delete(`https://mern-crud-i9nm.onrender.com//${userId}`);
+      await axios.delete(`https://mern-crud-i9nm.onrender.com/${userId}`);
     } catch (error) {
       alert(`Error : ${error}`)
     }
@@ -56,7 +56,7 @@ function App() {
 
     if (newName == "") return alert("Enter new name ");
     try {
-      await axios.put(`https://mern-crud-i9nm.onrender.com//${userId}`, { newName })
+      await axios.put(`https://mern-crud-i9nm.onrender.com/${userId}`, { newName })
     } catch (error) {
       alert(`Error : ${error}`)
     }

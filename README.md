@@ -1,3 +1,5 @@
+The post req submit error was corrected ,all I had to do was put the reloadFunc inside the createUser func as I was putting the reload func outside the createUser so it will be called before the post req is done as post req is async so it will move to the side and it will make sure the rest of the code runs smoothly therefore the reload func was getting called as soon as the createUser was called.
+
 # Read 
 export const getAllUsers = async (req, res) => {
   try {

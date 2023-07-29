@@ -33,17 +33,18 @@ function App() {
       // res = await axios.post('http://localhost:8000', { name: userName })
       await axios.post('https://crud-mern-api-six.vercel.app/', { name: userName })
       setUsername('');
-      
+
     } catch (error) {
       alert(`Error : ${error}`)
     }
+    reloadPage()
+
     console.log(res);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     createUser();
-    reloadPage()
   }
 
   const deleteUser = async (userId) => {

@@ -27,14 +27,17 @@ function App() {
 
   //Create User
   const createUser = async () => {
+    // alert(userName);
+    let res;
     try {
+      // res = await axios.post('http://localhost:8000', { name: userName })
       await axios.post('https://mern-crud-i9nm.onrender.com/', { name: userName })
-      // await axios.post('https://mern-crud-i9nm.onrender.com/', { name: userName })
       setUsername('');
-
+      
     } catch (error) {
       alert(`Error : ${error}`)
     }
+    console.log(res);
   }
 
   const handleSubmit = (e) => {

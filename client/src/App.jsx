@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchAllUser = async () => {
       try {
-        const allUsers = await axios.get('https://mern-crud-i9nm.onrender.com/');
+        const allUsers = await axios.get('https://crud-mern-api-six.vercel.app/');
         setUsers(allUsers.data.allUsers.reverse())
       } catch (error) {
         alert(`Error is : ${error}`)
@@ -31,7 +31,7 @@ function App() {
     let res;
     try {
       // res = await axios.post('http://localhost:8000', { name: userName })
-      await axios.post('https://mern-crud-i9nm.onrender.com/', { name: userName })
+      await axios.post('https://crud-mern-api-six.vercel.app/', { name: userName })
       setUsername('');
       
     } catch (error) {
@@ -48,7 +48,8 @@ function App() {
 
   const deleteUser = async (userId) => {
     try {
-      await axios.delete(`https://mern-crud-i9nm.onrender.com/${userId}`);
+      await axios.delete(`https://crud-mern-api-six.vercel.app/${userId}`);
+      // await axios.delete(`https://mern-crud-i9nm.onrender.com/${userId}`);
     } catch (error) {
       alert(`Error : ${error}`)
     }
@@ -60,7 +61,7 @@ function App() {
 
     if (newName == "") return alert("Enter new name ");
     try {
-      await axios.put(`https://mern-crud-i9nm.onrender.com/${userId}`, { newName })
+      await axios.put(`https://crud-mern-api-six.vercel.app/${userId}`, { newName })
     } catch (error) {
       alert(`Error : ${error}`)
     }

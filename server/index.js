@@ -6,7 +6,13 @@ import userRouter from "./routes/userRoutes.js";
 
 const PORT = 8000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://crud-mern-frontend-rudrcodes.vercel.app/"],
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/", userRouter);
